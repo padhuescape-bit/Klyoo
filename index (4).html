@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Klyoo - Portail Client Pro</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,sans-serif;background:#fcf8ff;color:#2d1b4e;min-height:100vh}
+.hero{background:radial-gradient(120% 120% at 20% 10%, #fef3ff 0%, #e9d5ff 20%, #ddd6fe 40%, #c7d2fe 60%, #a5f3fc 85%, #f0fdfa 100%);padding:70px 20px 80px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-50%;left:-20%;width:140%;height:200%;background:radial-gradient(circle at 30% 30%, rgba(255,255,255,0.8) 0%, transparent 50%);pointer-events:none}
+.hero h1{font-family:'Outfit',sans-serif;font-size:56px;font-weight:800;letter-spacing:-2px;color:#1e0e3f;position:relative}
+.hero h1 span{background:linear-gradient(135deg,#7c3aed 0%,#ec4899 50%,#06b6d4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero .main-line{font-family:'Outfit',sans-serif;font-size:22px;font-weight:600;color:#4c1d95;margin-top:16px;line-height:1.3;position:relative;max-width:600px;margin-left:auto;margin-right:auto}
+.hero .sub-line{font-size:15px;color:#7c6a9c;margin-top:12px;font-style:italic;position:relative}
+.badge{display:inline-block;background:#fff;border:1px solid #e9d5ff;color:#7c3aed;padding:6px 14px;border-radius:100px;font-size:12px;font-weight:600;letter-spacing:0.5px;margin-bottom:18px;box-shadow:0 2px 10px rgba(124,58,237,0.1)}
+.container{max-width:920px;margin:-40px auto 0;padding:20px;position:relative;z-index:2}
+.card{background:rgba(255,255,255,0.9);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.8);border-radius:24px;padding:28px;box-shadow:0 20px 60px rgba(124,58,237,0.12),0 4px 16px rgba(0,0,0,0.04);margin-bottom:24px}
+.card h3{font-family:'Outfit',sans-serif;font-size:20px;font-weight:700;color:#1e0e3f}
+.card .hint{color:#8b7aa8}
+label{font-size:11px;font-weight:700;color:#7c6a9c;text-transform:uppercase;letter-spacing:0.8px;display:block;margin-top:20px;margin-bottom:8px}
+input{width:100%;padding:14px 16px;border:1.5px solid #ede9fe;border-radius:14px;font-size:15px;outline:none;background:#fdfcff;transition:all .2s;font-family:'Inter',sans-serif}
+input:focus{border-color:#a78bfa;box-shadow:0 0 0 4px rgba(167,139,250,0.15);background:#fff}
+input::placeholder{color:#c4b5d6}
+.btn{width:100%;background:linear-gradient(135deg,#7c3aed 0%,#a855f7 40%,#ec4899 100%);color:#fff;border:none;padding:16px;border-radius:14px;font-size:16px;font-weight:700;cursor:pointer;margin-top:24px;box-shadow:0 8px 24px rgba(124,58,237,0.3);transition:transform .15s,box-shadow .15s;font-family:'Outfit',sans-serif;letter-spacing:0.2px}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(124,58,237,0.4)}
+.btn:active{transform:translateY(0)}
+.preview{border:none;border-radius:24px;overflow:hidden;background:#fff;margin-top:24px;box-shadow:0 20px 60px rgba(0,0,0,0.08),0 2px 0 rgba(0,0,0,0.03);border:1px solid #f3f0ff}
+.preview-head{padding:18px 26px;background:linear-gradient(135deg,#1e0e3f 0%,#4c1d95 100%);color:#fff;display:flex;justify-content:space-between;align-items:center}
+.preview-head span:first-child{font-family:'Outfit',sans-serif;font-weight:700;font-size:16px}
+.preview-head span:last-child{font-size:12px;opacity:0.8;background:rgba(255,255,255,0.15);padding:4px 10px;border-radius:100px}
+.pay{padding:20px;text-align:center;background:linear-gradient(to bottom,#faf5ff,#fff);border-top:1px solid #f3f0ff}
+.pay a{display:inline-block;background:#111827;color:#fff;padding:13px 30px;border-radius:12px;text-decoration:none;font-weight:700;font-family:'Outfit',sans-serif;box-shadow:0 4px 14px rgba(0,0,0,0.15);transition:transform .15s}
+.pay a:hover{transform:translateY(-1px)}
+.hint{font-size:12px;color:#9a8ab8;margin-top:8px;line-height:1.4}
+.link-box{margin-top:22px;background:#1e0e3f;color:#e9d5ff;padding:18px;border-radius:16px;word-break:break-all;font-family:monospace;font-size:12px;line-height:1.6;border:1px solid #3b2a6e}
+.copy-btn{background:#fff !important;color:#1e0e3f !important;box-shadow:none !important}
+.copy-btn:hover{background:#f5f3ff !important}
+#generator .hint{margin-bottom:4px}
+</style>
+</head>
+<body>
+<div class="hero">
+<div class="badge">✨ NOUVEAU — 0€ pour commencer</div>
+<h1><span>Klyoo</span></h1>
+<p class="main-line">Transforme ton lien Notion en portail client pro en 10 secondes !</p>
+<p class="sub-line">ou comment transformer la grenouille en prince charmant 🐸 → 👑</p>
+</div>
+
+<div class="container">
+<div class="card" id="generator">
+<h3 style="margin-bottom:6px">Ton générateur Klyoo</h3>
+<p class="hint">Remplis → Génère → Envoie le lien à ton client. Magique.</p>
+
+<label>Nom de ton agence / freelance</label>
+<input id="agency" placeholder="Ex: Julie Studio" value="Julie Studio">
+
+<label>Nom du client</label>
+<input id="client" placeholder="Ex: Dupont SARL" value="Dupont SARL">
+
+<label>Lien Notion / Drive / Figma</label>
+<input id="link" placeholder="https://www.notion.so/..." value="https://www.notion.so/">
+
+<label>Ton lien Stripe 12€/mois (optionnel)</label>
+<input id="stripe" placeholder="https://buy.stripe.com/..." value="">
+<div class="hint">Tu le crées en 2 min sur Stripe.com → Payment Links → Produit récurrent 12€</div>
+
+<button class="btn" onclick="gen()">✨ Générer mon portail Klyoo →</button>
+
+<div id="out"></div>
+</div>
+
+<div class="preview" id="preview">
+<div class="preview-head">
+<span id="pAgency">Julie Studio</span>
+<span id="pClient">Portail de Dupont SARL</span>
+</div>
+<div id="pBody" style="padding:60px 30px;text-align:center;color:#9a8ab8;font-size:15px;line-height:1.6">
+<div style="font-size:32px;margin-bottom:12px">✨</div>
+Ton aperçu pro apparaîtra ici<br><span style="font-size:13px">Remplis les champs au-dessus et clique sur Générer</span>
+</div>
+<div class="pay" id="pPay" style="display:none"><a id="pPayLink" href="#" target="_blank">Payer l'acompte →</a></div>
+</div>
+</div>
+
+<script>
+function gen(){
+ const agency = document.getElementById('agency').value || 'Mon Studio';
+ const client = document.getElementById('client').value || 'Client';
+ const link = document.getElementById('link').value;
+ const stripe = document.getElementById('stripe').value;
+ if(!link){ alert('Colle ton lien Notion 💜'); return; }
+ document.getElementById('pAgency').innerText = agency;
+ document.getElementById('pClient').innerText = 'Portail de ' + client;
+ const pay = document.getElementById('pPay');
+ const payLink = document.getElementById('pPayLink');
+ if(stripe){ pay.style.display='block'; payLink.href=stripe; } else { pay.style.display='none'; }
+ const isNotion = link.includes('notion');
+ if(isNotion){
+   document.getElementById('pBody').innerHTML = '<div style="padding:40px 20px"><div style="font-size:48px">📄</div><div style="margin-top:16px;font-weight:700;color:#1e0e3f">Ton espace Notion est prêt</div><div style="font-size:13px;color:#8b7aa8;margin-top:8px;word-break:break-all">'+link+'</div><a href="'+link+'" target="_blank" style="display:inline-block;margin-top:20px;background:linear-gradient(135deg,#7c3aed,#ec4899);color:#fff;padding:12px 28px;border-radius:12px;text-decoration:none;font-weight:700">Ouvrir le projet →</a><div style="font-size:11px;margin-top:16px;color:#9a8ab8">💡 Pour que ça s\'affiche dans la page, dans Notion clique sur Share → Share to web → copie ce lien</div></div>';
+ } else {
+   document.getElementById('pBody').innerHTML = '<iframe src="'+link+'" style="width:100%;height:520px;border:none;border-radius:0 0 16px 16px" onerror="this.style.display=\'none\'"></iframe><div style="font-size:12px;margin-top:10px;padding:10px"><a href="'+link+'" target="_blank" style="color:#7c3aed;font-weight:700">Ouvrir dans un nouvel onglet →</a></div>';
+ }
+ const data = btoa(encodeURIComponent(JSON.stringify({a:agency,c:client,u:link,s:stripe})));
+ const finalUrl = window.location.origin + window.location.pathname + '#klyoo=' + data;
+ document.getElementById('out').innerHTML = '<div class="link-box">'+finalUrl+'</div><div class="hint">↑ C\'est le lien à envoyer à ton client. Il est hébergé gratis. Pas de base de données = 0€ de frais.</div><button class="btn copy-btn" style="background:#fff;margin-top:12px;border:1.5px solid #ede9fe" onclick="navigator.clipboard.writeText(\''+finalUrl+'\');this.innerText=\'Copié ✓ Merci ! 💜\'">📋 Copier le lien client</button>';
+ location.hash = 'klyoo=' + data;
+ document.getElementById('preview').scrollIntoView({behavior:'smooth'});
+}
+window.addEventListener('load', ()=>{
+ if(location.hash.includes('klyoo=')){
+  try{
+   const d = JSON.parse(decodeURIComponent(atob(location.hash.split('klyoo=')[1])));
+   document.getElementById('agency').value=d.a; document.getElementById('client').value=d.c; document.getElementById('link').value=d.u; document.getElementById('stripe').value=d.s; 
+   document.getElementById('generator').style.display='none';
+   document.querySelector('.hero').style.display='none';
+   document.querySelector('.container').style.marginTop='20px';
+   gen();
+  }catch(e){}
+ }
+});
+</script>
+</body>
+</html>
